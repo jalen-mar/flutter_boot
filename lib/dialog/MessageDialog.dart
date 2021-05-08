@@ -80,9 +80,8 @@ class MessageDialog extends StatelessWidget {
                           ), textAlign: TextAlign.center,),
                         ),
                         onTap: () {
-                          if (callback.call() != false) {
-                            Navigator.pop(context);
-                          }
+                          Navigator.pop(context);
+                          callback.call();
                         },
                       ),
                     )
