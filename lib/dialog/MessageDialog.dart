@@ -62,6 +62,7 @@ class MessageDialog extends StatelessWidget {
                         ),
                         onTap: () {
                           Navigator.pop(context);
+                          cancel?.call();
                         },
                       ),
                     ),
@@ -69,7 +70,7 @@ class MessageDialog extends StatelessWidget {
                       child: InkWell(
                         child: Container(
                           decoration: BoxDecoration(
-                              color: color == null ? Colors.pink : color,
+                              color: color == null ? Theme.of(context).primaryColor : color,
                               borderRadius: BorderRadius.only(bottomRight: Radius.circular(12))
                           ),
                           padding: EdgeInsets.all(12),
