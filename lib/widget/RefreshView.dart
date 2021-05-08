@@ -3,13 +3,13 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class RefreshView extends StatelessWidget {
   final RefreshController controller;
-  final VoidCallback onRefresh;
-  final VoidCallback onLoad;
-  final Widget child;
-  final List<dynamic> data;
-  final Color color;
+  final VoidCallback? onRefresh;
+  final VoidCallback? onLoad;
+  final Widget? child;
+  final List<dynamic>? data;
+  final Color? color;
 
-  RefreshView({Key key, this.controller, this.onRefresh,
+  RefreshView(this.controller, {Key? key, this.onRefresh,
     this.onLoad, this.child, this.data, this.color}): super(key: key);
 
   @override
@@ -128,9 +128,9 @@ class _FailedView extends StatelessWidget {
 class Controller extends RefreshController {
   final List<dynamic> data;
 
-  Controller(this.data, {bool initialRefresh}) : super(initialRefresh: initialRefresh ?? true);
+  Controller(this.data, {bool? initialRefresh}) : super(initialRefresh: initialRefresh ?? true);
 
-  void addItem({List<dynamic> data, int page}) {
+  void addItem({List<dynamic>? data, int? page}) {
     if (data != null) {
       if (page == 1) {
         this.data.clear();
